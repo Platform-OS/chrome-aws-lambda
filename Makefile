@@ -10,6 +10,6 @@ clean:
 	tar --directory nodejs/node_modules/chrome-aws-lambda/ --extract --file chrome-aws-lambda-*.tgz --strip-components=1
 	rm chrome-aws-lambda-*.tgz
 	mkdir -p $(dir $@)
-	zip -9 --filesync --move --recurse-paths $@ nodejs/
+	zip -9 --filesync -q --move --recurse-paths $@ nodejs/
 
 .DEFAULT_GOAL := chrome_aws_lambda.zip
